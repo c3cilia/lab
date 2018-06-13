@@ -1,10 +1,15 @@
-div {
+* {
   box-sizing: border-box;
+}
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+.single {
   width: 100px;
   height: 100px;
   border: 1px solid;
   animation-duration: 10s;
   animation-name: example1;
+  animation-timing-function: ease;
   position: relative;
   left: 30%;
   top: 100px;
@@ -24,5 +29,50 @@ div {
   100%{
     transform: scale(1);
   }
+}
 
+/*
+* Grid
+*/
+.grid {
+  width: 2000px;
+  height: 2000px;
+  position: absolute;
+  top: 0;
+  animation: grid-animation 40s ease infinite alternate;
+
+}
+@keyframes grid-animation {
+  0%, 100% {
+    transform: translate(0, 0);
+    animation-timing-function: ease;
+  }
+  10%, 90% {
+    transform: translate(-100px, -100px);
+    animation-timing-function: ease-in-out;
+  }
+  20%, 80% {
+    transform: translate(-200px, -200px);
+    animation-timing-function: ease-in-out;
+  }
+  30%, 70% {
+    transform: translate(-300px, -300px);
+    animation-timing-function: ease-in-out;
+  }
+  60%, 40% {
+    transform: translate(-400px, -400px);
+    animation-timing-function: ease-in-out;
+  }
+
+  50% {
+    transform: translate(-500px, -500px);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.grid-cell {
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: 2px;
 }
